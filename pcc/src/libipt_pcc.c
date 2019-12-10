@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <xtables.h>
+
 #include "xt_pcc.h"
-#include "compat_user.h"
 
 static const struct option pcc_mt_opts[] = {
 	{.name = "src-addr",   .has_arg = false, .val = 's'},

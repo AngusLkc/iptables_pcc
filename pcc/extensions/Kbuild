@@ -1,1 +1,0 @@
-obj-${build_pcc} += xt_pcc.o
