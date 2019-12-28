@@ -1,5 +1,8 @@
-此项目是iptables每次连接分类匹配模块，类似于Mikrotik RouterOS的PCC功能。本项目能同时基于源地址、目标地址、源端口、目标端口进行匹配，比NTH模块强大。
-模块应用：
+#模块说明
+此项目是iptables连接标记模块，类似于Mikrotik RouterOS的PCC功能。本项目能同时基于源地址、目标地址、源端口、目标端口进行匹配，比NTH模块强大。
+
+#模块应用：
+```Shell
 iptables -t mangle -N PCCLOAD
 iptables -t mangle -A PCCLOAD -m pcc --src-addr --dst-addr --src-port --dst-port --pcc-mod 4 --pcc-value 0 -j CONNMARK --set-mark 1
 iptables -t mangle -A PCCLOAD -m pcc --src-addr --dst-addr --src-port --dst-port --pcc-mod 4 --pcc-value 1 -j CONNMARK --set-mark 2
@@ -41,3 +44,4 @@ ip rule add fwmark 2 table wan2
 ip rule add fwmark 3 table wan3
 ip rule add fwmark 4 table wan4
 ip route flush cache
+```
