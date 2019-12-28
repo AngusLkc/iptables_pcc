@@ -68,7 +68,7 @@ static int pcc_mt_parse(int c, char **argv, int invert, unsigned int *flags, con
 		if (invert)
 			info->flags |= XT_PCC_INVERT;
 		info->value = strtoul(optarg, &endptr, 0);
-		if (*endptr != '\0' || !info->value || info->value < 0)
+		if (*endptr != '\0' || info->value < 0)
 			xtables_error(PARAMETER_PROBLEM, "pcc match: invalid value for --pcc-value");
 		return true;
 	}
