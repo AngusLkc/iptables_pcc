@@ -47,7 +47,7 @@ static int pcc_mt_check(const struct xt_mtchk_param *par){
 		printk(KERN_INFO KBUILD_MODNAME ": --pcc-mod can't be zero\n");
 		return -EINVAL;
 	}
-	if (info->value >= info->mod || !info->value || info->value < 0) {
+	if (info->value >= info->mod || info->value < 0) {
 		printk(KERN_INFO KBUILD_MODNAME ": --pcc-value must be less than --pcc-mod\n");
 		return -EINVAL;
 	}
