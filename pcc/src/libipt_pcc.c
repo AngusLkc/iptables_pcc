@@ -57,7 +57,7 @@ static int pcc_mt_parse(int c, char **argv, int invert, unsigned int *flags, con
 		xtables_param_act(XTF_ONLY_ONCE, "pcc", "--pcc-mod", *flags & XT_PCC_MOD);
 		*flags      |= XT_PCC_MOD;
 		info->flags |= XT_PCC_MOD;
-		info->mod = strtoull(optarg, &endptr, 0);
+		info->mod = strtoul(optarg, &endptr, 0);
 		if (*endptr != '\0' || !info->mod)
 			xtables_error(PARAMETER_PROBLEM, "pcc match: invalid value for --pcc-mod");
 		return true;
