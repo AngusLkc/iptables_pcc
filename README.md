@@ -13,10 +13,10 @@ iptables -t mangle -A PCCLOAD -m pcc --src-addr --dst-addr --src-port --dst-port
 iptables -t mangle -A PCCLOAD -j CONNMARK --save-mark
 
 iptables -t mangle -N RESTORE
-iptables -t mangle -A RESTORE -m state --state ESTABLISHED,RELATED -j RESTORE
-iptables -t mangle -A RESTORE -m state --state NEW -j PCCLOAD
+iptables -t mangle -A RESTORE -m conntrack --ctstate ESTABLISHED,RELATED -j RESTORE
+iptables -t mangle -A RESTORE -m conntrack --ctstate NEW -j PCCLOAD
 
-iptables -t mangle -I PREROUTING 1 -s 192.168.0.0/24 -j RESTORE
+iptables -t mangle -A PREROUTING -s 192.168.0.0/24 -j RESTORE
 
 cat /etc/iproute2/rt_tables 
 255    local
