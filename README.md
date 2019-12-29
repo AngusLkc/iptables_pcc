@@ -4,7 +4,8 @@
 
 模块应用：
 ===
-*对每条连接的第一个包打上标签，并把标签值应用到同一连接会话的所有包中。然后对含有特定标签值的包设置不同的出口网关*
+*对每条连接的第一个包打上标签，并把标签值应用到同一连接会话的所有包中。
+然后对含有特定标签值的包设置不同的出口网关*
 ```Shell
 iptables -t mangle -N PCCLOAD
 iptables -t mangle -A PCCLOAD -m pcc --src-addr --dst-addr --src-port --dst-port --pcc-mod 4 --pcc-value 0 -j CONNMARK --set-mark 1
