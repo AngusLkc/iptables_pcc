@@ -1,6 +1,7 @@
 模块说明
 ===
 此项目是iptables连接哈希取余匹配模块，类似于Mikrotik RouterOS的PCC功能。本项目能基于源地址、目标地址、源端口、目标端口进行匹配。
+OpenWRT下编译可直接下载本项目，然后解压pcc文件夹到OpenWRT编译工作的Package目录内，然后重新执行make menuconfig即可。
 
 模块应用：
 ===
